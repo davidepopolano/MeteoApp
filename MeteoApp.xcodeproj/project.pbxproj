@@ -11,6 +11,7 @@
 		85AA8C120C02FF92E9F1F4AC /* Pods_MeteoAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BA9C658183E236007D0529 /* Pods_MeteoAppUITests.framework */; };
 		F6712ED220B2F22700876977 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6712ED120B2F22700876977 /* Constants.swift */; };
 		F6712ED420B2F59D00876977 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6712ED320B2F59D00876977 /* CurrentWeather.swift */; };
+		F69C5EB120B6A147005DEB65 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69C5EB020B6A147005DEB65 /* Forecast.swift */; };
 		F6D063E920B1C46A004088BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D063E820B1C46A004088BF /* AppDelegate.swift */; };
 		F6D063EB20B1C46A004088BF /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D063EA20B1C46A004088BF /* WeatherVC.swift */; };
 		F6D063EE20B1C46A004088BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6D063EC20B1C46A004088BF /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 		F6D063F320B1C46B004088BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6D063F120B1C46B004088BF /* LaunchScreen.storyboard */; };
 		F6D063FE20B1C46C004088BF /* MeteoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D063FD20B1C46C004088BF /* MeteoAppTests.swift */; };
 		F6D0640920B1C46C004088BF /* MeteoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D0640820B1C46C004088BF /* MeteoAppUITests.swift */; };
+		F6DCC79820B7EF45005CE3AA /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DCC79720B7EF45005CE3AA /* WeatherCell.swift */; };
 		FD814272776D86325BC9D046 /* Pods_MeteoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D136EC709DB5AEE6F7CF466E /* Pods_MeteoAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,7 @@
 		D136EC709DB5AEE6F7CF466E /* Pods_MeteoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeteoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6712ED120B2F22700876977 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F6712ED320B2F59D00876977 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		F69C5EB020B6A147005DEB65 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F6D063E520B1C46A004088BF /* MeteoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeteoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D063E820B1C46A004088BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6D063EA20B1C46A004088BF /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		F6D0640420B1C46C004088BF /* MeteoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeteoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D0640820B1C46C004088BF /* MeteoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoAppUITests.swift; sourceTree = "<group>"; };
 		F6D0640A20B1C46C004088BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6DCC79720B7EF45005CE3AA /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,8 @@
 				F6D063F420B1C46B004088BF /* Info.plist */,
 				F6712ED120B2F22700876977 /* Constants.swift */,
 				F6712ED320B2F59D00876977 /* CurrentWeather.swift */,
+				F69C5EB020B6A147005DEB65 /* Forecast.swift */,
+				F6DCC79720B7EF45005CE3AA /* WeatherCell.swift */,
 			);
 			path = MeteoApp;
 			sourceTree = "<group>";
@@ -383,8 +389,10 @@
 			files = (
 				F6D063EB20B1C46A004088BF /* WeatherVC.swift in Sources */,
 				F6D063E920B1C46A004088BF /* AppDelegate.swift in Sources */,
+				F6DCC79820B7EF45005CE3AA /* WeatherCell.swift in Sources */,
 				F6712ED420B2F59D00876977 /* CurrentWeather.swift in Sources */,
 				F6712ED220B2F22700876977 /* Constants.swift in Sources */,
+				F69C5EB120B6A147005DEB65 /* Forecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ class CurrentWeather {
     var _cityName: String!
     var _date: String!
     var _weatherType: String!
-    var _currentTemp: Double!
+    var _currentTemp: String!
     
     var cityName: String {
         if _cityName == nil {
@@ -42,9 +42,9 @@ class CurrentWeather {
         return _weatherType
     }
     
-    var currentTemp: Double {
+    var currentTemp: String {
         if _currentTemp == nil {
-            _currentTemp = 0.0
+            _currentTemp = ""
         }
         return _currentTemp
     }
@@ -55,6 +55,9 @@ class CurrentWeather {
         Alamofire.request(currentWeatherURL).responseJSON { response in
             let result = response.result
             if let dict = result.value as? Dictionary<String, Any> {
+                if let cod = dict["cod"] as? String {
+                    print("\(result): \(cod)")
+                }
                 if let name = dict["name"] as? String {
                     self._cityName = name.capitalized
                 }
@@ -67,14 +70,15 @@ class CurrentWeather {
                     if let tempKelvin = main["temp"] as? Double {
                         //Perform conversion from Kelvin to Celsius
                         let temp = tempKelvin - 273.15
-                        let tempCu = Double(round(1000 * temp) / 1000)
+                        let tempCurr = Double(round(1000 * temp) / 1000)
                         //Assign value of Json to the local variable
-                        self._currentTemp = tempCu
+                        self._currentTemp = "\(tempCurr)"
                     }
                 }
             }
             completed()
         }
+        
     }
     
 }
