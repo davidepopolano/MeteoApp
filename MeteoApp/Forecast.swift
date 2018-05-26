@@ -50,28 +50,28 @@ class Forecast {
                 let temp = tempLow - 273.15
                 let tempCurr = Double(round(1000 * temp) / 1000)
                 self._lowTemp = "\(tempCurr)"
-//                print(self._lowTemp)
+//                                print(self._lowTemp)
             }
             if let tempHigh = main["temp_max"] as? Double {
                 let temp = tempHigh - 273.15
                 let tempCurr = Double(round(1000 * temp) / 1000)
                 self._highTemp = "\(tempCurr)"
-//                print(self._highTemp)
+                //                print(self._highTemp)
             }
         }
         if let weather = weatherDict["weather"] as? [Dictionary<String, Any>] {
             if let main = weather[0]["main"] as? String {
                 self._weatherType = main
-//                print(self._weatherType)
+                //                print(self._weatherType)
             }
         }
         
         if let unixDate = weatherDict["dt"] as? Double {
             let date = Date(timeIntervalSince1970: unixDate)
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateStyle = .long
-//            dateFormatter.dateFormat = "EEEE"
-//            dateFormatter.timeStyle = .none
+            //            let dateFormatter = DateFormatter()
+            //            dateFormatter.dateStyle = .long
+            //            dateFormatter.dateFormat = "EEEE"
+            //            dateFormatter.timeStyle = .none
             self._date = date.dayOfTheWeek()
         }
     }
