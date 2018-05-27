@@ -70,7 +70,7 @@ class CurrentWeather {
                     if let tempKelvin = main["temp"] as? Double {
                         //Perform conversion from Kelvin to Celsius
                         let temp = tempKelvin - 273.15
-                        let tempCurr = Double(round(1000 * temp) / 1000)
+                        let tempCurr = Int(round(1000 * temp) / 1000)
                         //Assign value of Json to the local variable
                         self._currentTemp = "\(tempCurr)"
                     }

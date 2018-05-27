@@ -15,6 +15,7 @@ class Forecast {
     private var _weatherType:String!
     private var _highTemp: String!
     private var _lowTemp: String!
+    private var _time: String!
     
     var date: String {
         if _date == nil {
@@ -44,34 +45,38 @@ class Forecast {
         return _lowTemp
     }
     
+    var time: String {
+        if _time == nil {
+            _time = ""
+        }
+        return _time
+    }
+    
     init(weatherDict: Dictionary<String, Any>) {
         if let main = weatherDict["main"] as? Dictionary<String, Any> {
             if let tempLow = main["temp_min"] as? Double {
                 let temp = tempLow - 273.15
-                let tempCurr = Double(round(1000 * temp) / 1000)
+                let tempCurr = Int(round(1000 * temp) / 1000)
                 self._lowTemp = "\(tempCurr)"
-//                                print(self._lowTemp)
             }
             if let tempHigh = main["temp_max"] as? Double {
                 let temp = tempHigh - 273.15
-                let tempCurr = Double(round(1000 * temp) / 1000)
+                let tempCurr = Int(round(1000 * temp) / 1000)
                 self._highTemp = "\(tempCurr)"
-                //                print(self._highTemp)
             }
         }
         if let weather = weatherDict["weather"] as? [Dictionary<String, Any>] {
             if let main = weather[0]["main"] as? String {
                 self._weatherType = main
-                //                print(self._weatherType)
             }
         }
         
         if let unixDate = weatherDict["dt"] as? Double {
             let date = Date(timeIntervalSince1970: unixDate)
-            //            let dateFormatter = DateFormatter()
-            //            dateFormatter.dateStyle = .long
-            //            dateFormatter.dateFormat = "EEEE"
-            //            dateFormatter.timeStyle = .none
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .none
+            dateFormatter.timeStyle = .short
+            self._time = dateFormatter.string(from: date)
             self._date = date.dayOfTheWeek()
         }
     }
